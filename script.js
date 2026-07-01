@@ -1,18 +1,17 @@
 /* ═══════════════════════════════════════════════════════════
    ANUSHA SARLA — PORTFOLIO SCRIPT
-   Handles: Navigation, Scroll Reveals, Particles, Counters,
-            Skill Bars, Smooth Scrolling, Form
+   Handles: Navigation, Scroll Reveals, Teal Particles,
+            Smooth Scrolling, Name Reveal Animation
    ═══════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initScrollReveal();
-  initParticles();
-  initCounters();
-  initSkillBars();
+  initTealParticles();
   initSmoothScroll();
-  initContactForm();
+  initNameReveal();
   initActiveNavHighlight();
+  initCardHoverEffects();
 });
 
 /* ─── NAVIGATION ─── */
@@ -22,22 +21,35 @@ function initNavigation() {
   const navLinks = document.getElementById('navLinks');
   const links = navLinks.querySelectorAll('.nav-link');
 
-  // Scroll behaviour
-  let lastScroll = 0;
+  // Scroll behavior (navbar, progress bar, scroll variables, sticky badge)
+  const scrollProgress = document.getElementById('scrollProgress');
+  const stickyConnect = document.getElementById('stickyConnect');
+
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
+    
     navbar.classList.toggle('scrolled', scrollY > 50);
-    lastScroll = scrollY;
+    document.body.style.setProperty('--scroll-y', `${scrollY}px`);
+
+    if (scrollProgress) {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = totalHeight > 0 ? (scrollY / totalHeight) * 100 : 0;
+      scrollProgress.style.width = `${progress}%`;
+    }
+
+    if (stickyConnect) {
+      stickyConnect.classList.toggle('show', scrollY > 450);
+    }
   }, { passive: true });
 
-  // Mobile toggle
+  // Mobile menu toggle
   navToggle.addEventListener('click', () => {
     navToggle.classList.toggle('open');
     navLinks.classList.toggle('open');
     document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
   });
 
-  // Close on link click
+  // Close mobile menu on link click
   links.forEach(link => {
     link.addEventListener('click', () => {
       navToggle.classList.remove('open');
@@ -63,7 +75,7 @@ function initActiveNavHighlight() {
         }
       });
     },
-    { rootMargin: '-30% 0px -70% 0px' }
+    { rootMargin: '-30% 0px -60% 0px' }
   );
 
   sections.forEach(section => observer.observe(section));
@@ -82,36 +94,47 @@ function initScrollReveal() {
         }
       });
     },
-    { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
   );
 
   reveals.forEach(el => observer.observe(el));
 }
 
-/* ─── FLOATING PARTICLES ─── */
-function initParticles() {
-  const field = document.getElementById('particleField');
-  if (!field) return;
+/* ─── CYBER TEAL FLOATING PARTICLES ─── */
+function initTealParticles() {
+  // Create particle container inside body if not exists
+  let field = document.getElementById('particleField');
+  if (!field) {
+    field = document.createElement('div');
+    field.id = 'particleField';
+    Object.assign(field.style, {
+      position: 'fixed',
+      inset: '0',
+      pointerEvents: 'none',
+      zIndex: '1',
+      overflow: 'hidden'
+    });
+    document.body.appendChild(field);
+  }
 
-  const count = 40;
+  const count = 35;
 
   for (let i = 0; i < count; i++) {
     const particle = document.createElement('div');
     const size = Math.random() * 3 + 1;
     const x = Math.random() * 100;
     const y = Math.random() * 100;
-    const duration = Math.random() * 15 + 10;
+    const duration = Math.random() * 20 + 15;
     const delay = Math.random() * 10;
-    const opacity = Math.random() * 0.3 + 0.05;
+    const opacity = Math.random() * 0.15 + 0.03;
 
     Object.assign(particle.style, {
       position: 'absolute',
       width: `${size}px`,
       height: `${size}px`,
       borderRadius: '50%',
-      background: Math.random() > 0.5
-        ? 'rgba(212, 168, 83, ' + opacity + ')'
-        : 'rgba(232, 160, 191, ' + opacity + ')',
+      background: `rgba(100, 255, 218, ${opacity})`, // Beautiful cyber teal color
+      boxShadow: `0 0 8px rgba(100, 255, 218, ${opacity * 2})`,
       left: `${x}%`,
       top: `${y}%`,
       animation: `particleFloat ${duration}s ease-in-out ${delay}s infinite`,
@@ -128,20 +151,13 @@ function initParticles() {
     style.textContent = `
       @keyframes particleFloat {
         0%, 100% {
-          transform: translate(0, 0) scale(1);
-          opacity: var(--opacity, 0.15);
+          transform: translateY(0) translateX(0) scale(1);
         }
-        25% {
-          transform: translate(${rnd(-30, 30)}px, ${rnd(-40, 40)}px) scale(1.2);
-          opacity: calc(var(--opacity, 0.15) * 1.5);
+        33% {
+          transform: translateY(-50px) translateX(20px) scale(1.1);
         }
-        50% {
-          transform: translate(${rnd(-20, 20)}px, ${rnd(-30, 30)}px) scale(0.8);
-          opacity: var(--opacity, 0.15);
-        }
-        75% {
-          transform: translate(${rnd(-25, 25)}px, ${rnd(-35, 35)}px) scale(1.1);
-          opacity: calc(var(--opacity, 0.15) * 0.8);
+        66% {
+          transform: translateY(30px) translateX(-30px) scale(0.9);
         }
       }
     `;
@@ -149,87 +165,17 @@ function initParticles() {
   }
 }
 
-function rnd(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-/* ─── COUNTER ANIMATION ─── */
-function initCounters() {
-  const counters = document.querySelectorAll('[data-count]');
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.dataset.count, 10);
-          animateCounter(el, target);
-          observer.unobserve(el);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  counters.forEach(counter => observer.observe(counter));
-}
-
-function animateCounter(el, target) {
-  const duration = 1500;
-  const startTime = performance.now();
-
-  function update(currentTime) {
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    // Ease out
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.floor(eased * target);
-    el.textContent = current;
-
-    if (progress < 1) {
-      requestAnimationFrame(update);
-    } else {
-      el.textContent = target;
-    }
-  }
-
-  requestAnimationFrame(update);
-}
-
-/* ─── SKILL BARS ─── */
-function initSkillBars() {
-  const fills = document.querySelectorAll('.skill-fill');
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const width = el.dataset.width;
-          el.style.setProperty('--target-width', width + '%');
-          el.classList.add('animated');
-          // Set the width directly after a tiny delay for the transition
-          requestAnimationFrame(() => {
-            el.style.width = width + '%';
-          });
-          observer.unobserve(el);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  fills.forEach(fill => observer.observe(fill));
-}
-
 /* ─── SMOOTH SCROLL ─── */
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = document.querySelector(anchor.getAttribute('href'));
+      const targetId = anchor.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const target = document.querySelector(targetId);
       if (target) {
-        const offset = 80; // navbar height
+        const offset = 80; // navbar offset
         const top = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top, behavior: 'smooth' });
       }
@@ -237,84 +183,99 @@ function initSmoothScroll() {
   });
 }
 
-/* ─── CONTACT FORM ─── */
-function initContactForm() {
-  const form = document.getElementById('contactForm');
-  if (!form) return;
+/* ─── NAME REVEAL ANIMATION ON PAGE LOAD ─── */
+function initNameReveal() {
+  const nameElement = document.getElementById('heroName');
+  if (!nameElement) return;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  const originalText = nameElement.textContent.trim();
+  nameElement.textContent = '';
+  
+  // Set styling for typing name first
+  nameElement.style.display = 'inline-block';
+  nameElement.style.borderRight = '3px solid var(--clr-primary)';
+  nameElement.style.whiteSpace = 'nowrap';
+  nameElement.style.animation = 'cursorBlink 0.75s step-end infinite';
 
-    const name = document.getElementById('formName').value;
-    const email = document.getElementById('formEmail').value;
-    const subject = document.getElementById('formSubject').value;
-    const message = document.getElementById('formMessage').value;
-
-    // Build mailto link
-    const mailtoSubject = encodeURIComponent(subject || 'Portfolio Contact');
-    const mailtoBody = encodeURIComponent(
-      `Hi Anusha,\n\nName: ${name}\nEmail: ${email}\n\n${message}`
-    );
-    const mailto = `mailto:anushasarla123@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-    window.location.href = mailto;
-
-    // Show success feedback
-    const btn = form.querySelector('button[type="submit"]');
-    const originalHTML = btn.innerHTML;
-    btn.innerHTML = '<span>Message Prepared! ✓</span>';
-    btn.style.background = 'linear-gradient(135deg, #4CAF50 0%, #388E3C 100%)';
-    btn.style.color = '#fff';
-
-    setTimeout(() => {
-      btn.innerHTML = originalHTML;
-      btn.style.background = '';
-      btn.style.color = '';
-      form.reset();
-    }, 3000);
-  });
-}
-
-/* ─── SUBTLE PARALLAX ON LANDING ─── */
-(function initParallax() {
-  let ticking = false;
-
-  window.addEventListener('mousemove', (e) => {
-    if (ticking) return;
-    ticking = true;
-
-    requestAnimationFrame(() => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 2;
-      const y = (e.clientY / window.innerHeight - 0.5) * 2;
-
-      const shapes = document.querySelectorAll('.shape');
-      shapes.forEach((shape, i) => {
-        const speed = (i + 1) * 8;
-        shape.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-      });
-
-      ticking = false;
-    });
-  }, { passive: true });
-})();
-
-/* ─── TYPED TEXT EFFECT ON LANDING ─── */
-(function initTypedGreeting() {
-  const greeting = document.querySelector('.landing-greeting');
-  if (!greeting) return;
-
-  const text = greeting.textContent;
-  greeting.textContent = '';
-  greeting.style.minHeight = '1.5em';
+  // Inject blink cursor styling
+  if (!document.getElementById('cursor-keyframes')) {
+    const style = document.createElement('style');
+    style.id = 'cursor-keyframes';
+    style.textContent = `
+      @keyframes cursorBlink {
+        from, to { border-color: transparent }
+        50% { border-color: var(--clr-primary); }
+      }
+    `;
+    document.head.appendChild(style);
+  }
 
   let i = 0;
-  function type() {
-    if (i < text.length) {
-      greeting.textContent += text.charAt(i);
+  function typeName() {
+    if (i < originalText.length) {
+      nameElement.textContent += originalText.charAt(i);
       i++;
-      setTimeout(type, 80);
+      setTimeout(typeName, 100); // speed of typing
+    } else {
+      // Typing done, stop cursor blinking after a delay
+      setTimeout(() => {
+        nameElement.style.borderRight = 'none';
+        nameElement.style.animation = 'none';
+        
+        // Stagger show rest of the hero elements
+        const staggers = document.querySelectorAll('.hero-content > *:not(#heroName), .hero-photo-container');
+        staggers.forEach((el, index) => {
+          setTimeout(() => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0) scale(1)';
+          }, (index + 1) * 200);
+        });
+      }, 500);
     }
   }
 
-  // Wait for reveal
-  setTimeout(type, 600);
-})();
+  // Hide other elements initially to allow name to show first
+  const staggers = document.querySelectorAll('.hero-content > *:not(#heroName), .hero-photo-container');
+  staggers.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(15px)';
+    el.style.transition = 'opacity var(--duration-normal) var(--ease-out), transform var(--duration-normal) var(--ease-out)';
+  });
+
+  // Start typing
+  setTimeout(typeName, 400);
+}
+
+/* ─── SKILL & EXPERIENCE CARDS INTERACTIVE HOVER ─── */
+function initCardHoverEffects() {
+  const cards = document.querySelectorAll('.skill-card, .exp-card, .edu-card, .project-card, .ach-card');
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      // Set custom CSS variables for light reflection tracking
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+
+      // 3D tilt calculations
+      const width = rect.width;
+      const height = rect.height;
+      const centerX = width / 2;
+      const centerY = height / 2;
+      const rotateX = ((centerY - y) / centerY) * 4; // Max tilt of 4 degrees
+      const rotateY = ((x - centerX) / centerX) * 4;
+
+      card.style.setProperty('--rotate-x', `${rotateX}deg`);
+      card.style.setProperty('--rotate-y', `${rotateY}deg`);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      // Reset tilt values on mouse leave
+      card.style.setProperty('--rotate-x', '0deg');
+      card.style.setProperty('--rotate-y', '0deg');
+    });
+  });
+}

@@ -1,853 +1,805 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anusha Sarla — Data Analyst &amp; BI Specialist | Portfolio</title>
-  <meta name="description" content="Portfolio of Anusha Sarla — a results-driven Data Analyst specialising in SQL, Python, Power BI, and data storytelling. Based in Dublin, Ireland." />
-  <meta name="keywords" content="Data Analyst, Business Intelligence, Power BI, SQL, Python, Dublin, Ireland, Portfolio" />
+  <meta name="description"
+    content="Portfolio of Anusha Sarla — a results-driven Data Analyst specialising in SQL, Python, Power BI, and data storytelling. Based in Dublin, Ireland." />
+  <meta name="keywords"
+    content="Data Analyst, Business Intelligence, Power BI, SQL, Python, Dublin, Ireland, Portfolio" />
   <meta name="author" content="Anusha Sarla" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Devicon CDN for tech logos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
   <nav id="navbar" class="navbar">
     <div class="nav-inner">
-      <a href="#landing" class="nav-logo">
+      <a href="#about" class="nav-logo">
         <span class="logo-text">AS</span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <span class="hamburger"></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#landing" class="nav-link active" data-section="landing">Home</a></li>
-        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#about" class="nav-link active" data-section="about">About</a></li>
+        <li><a href="#skills-experience" class="nav-link" data-section="skills-experience">Skills &amp; Experience</a>
+        </li>
         <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
         <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
-        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
-        <li><a href="#certifications" class="nav-link" data-section="certifications">Certifications</a></li>
-        <li><a href="#achievements" class="nav-link" data-section="achievements">Achievements</a></li>
+        <li><a href="#achievements" class="nav-link" data-section="achievements">Achievements &amp; Extracurriculars</a>
+        </li>
         <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ═══════════════════ PAGE 1 — LANDING ═══════════════════ -->
-  <section id="landing" class="section section-landing">
-    <div class="landing-bg-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-      <div class="particle-field" id="particleField"></div>
-    </div>
-    <div class="landing-content">
-      <div class="landing-text">
-        <p class="landing-greeting reveal-up">Hello, I'm</p>
-        <h1 class="landing-name reveal-up delay-1">
-          Anusha <span class="text-accent">Sarla</span>
-        </h1>
-        <div class="landing-roles reveal-up delay-2">
-          <span class="role-tag">Data Analyst</span>
-          <span class="role-divider">·</span>
-          <span class="role-tag">Business Intelligence</span>
-          <span class="role-divider">·</span>
-          <span class="role-tag">Stakeholder Reporting</span>
+  <!-- ═══════════════════ SECTION 1 — ABOUT (Hero + Bio) ═══════════════════ -->
+  <section id="about" class="section section-about-hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content reveal-up">
+          <p class="hero-greeting">Hello, I am</p>
+          <h1 class="hero-name" id="heroName">Anusha Sarla</h1>
+
+          <div class="hero-roles">
+            <span class="role-tag">Data Analyst</span>
+            <span class="role-divider">/</span>
+            <span class="role-tag">Business Intelligence Specialist</span>
+            <span class="role-divider">/</span>
+            <span class="role-tag">Computational Science Graduate</span>
+          </div>
+
+          <div class="hero-bio">
+            <p>
+              Data Analyst with an MSc in Data & Computational Science from UCD and experience in SQL, Python, Power BI,
+              and stakeholder
+              reporting. Proven ability to translate complex datasets into actionable business insights through data
+              storytelling, ad hoc analysis, and
+              dashboard reporting across healthcare, insurance, and operations.
+            </p>
+          </div>
+
+          <div class="hero-cta">
+            <div class="circular-connect-wrapper">
+              <a href="#contact" class="circular-connect">
+                <div class="circular-text-svg-wrapper">
+                  <svg viewBox="0 0 100 100" class="circular-text-svg">
+                    <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+                    <text font-family="monospace" font-size="7" fill="var(--clr-text-secondary)" letter-spacing="1">
+                      <textPath href="#circlePath">
+                        LET'S CONNECT • ANUSHA SARLA • LET'S CONNECT • ANUSHA SARLA •
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
+                <div class="circular-connect-center">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
-        <p class="landing-intro reveal-up delay-3">
-          A results-driven Data Analyst with an MSc in Data &amp; Computational Science from University College Dublin, I transform complex datasets into clear, actionable business insights. With experience spanning healthcare, insurance, and operations, I bring expertise in SQL, Python, Power BI, and data storytelling. From fraud detection pipelines to executive KPI dashboards, I deliver analysis that drives real decisions. Currently based in Dublin on a Stamp 1G, I'm passionate about building data products that make organisations smarter and faster. Let's turn your data into your competitive advantage.
-        </p>
-        <div class="landing-cta reveal-up delay-4">
-          <a href="#projects" class="btn btn-primary">
-            <span>View My Work</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#contact" class="btn btn-outline">
-            <span>Get In Touch</span>
-          </a>
-        </div>
-        <div class="landing-stats reveal-up delay-5">
-          <div class="stat-item">
-            <span class="stat-number" data-count="2">0</span><span class="stat-plus">+</span>
-            <span class="stat-label">Years Exp.</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="3">0</span><span class="stat-plus">+</span>
-            <span class="stat-label">Projects</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="2">0</span>
-            <span class="stat-label">Certifications</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="4">0</span>
-            <span class="stat-label">Awards</span>
+
+        <!-- Creative Hexagonal / Blob Morphing Photo Frame -->
+        <div class="hero-photo-container reveal-scale delay-2">
+          <div class="creative-photo-frame">
+            <div class="photo-blob-glow"></div>
+            <div class="photo-blob-bg"></div>
+            <div class="photo-blob-border"></div>
+            <div class="photo-blob-inner">
+              <img src="photo.png" alt="Anusha Sarla" class="profile-img" />
+            </div>
+            <div class="photo-badge">
+              <span class="badge-dot"></span>
+              <span>Open to Work</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="landing-photo reveal-scale delay-2">
-        <div class="photo-frame">
-          <div class="photo-glow"></div>
-          <img src="photo.jpeg" alt="Anusha Sarla — Data Analyst" class="profile-img" />
-          <div class="photo-ring"></div>
-        </div>
-        <div class="photo-badge">
-          <span class="badge-dot"></span>
-          <span>Open to Work</span>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
     </div>
   </section>
 
-  <!-- ═══════════════════ PAGE 2 — ABOUT ME ═══════════════════ -->
-  <section id="about" class="section section-about">
+  <!-- ═══════════════════ SECTION 2 — SKILLS & EXPERIENCE ═══════════════════ -->
+  <section id="skills-experience" class="section section-skills-experience">
     <div class="container">
       <div class="section-header reveal-up">
-        <span class="section-number">01</span>
-        <h2 class="section-title">About <span class="text-accent">Me</span></h2>
+        <h2 class="section-title">Skills &amp; Experience</h2>
         <div class="section-line"></div>
       </div>
-      <div class="about-grid">
-        <div class="about-text reveal-up delay-1">
-          <p class="about-paragraph">
-            I'm a Data Analyst with an MSc in Data &amp; Computational Science from University College Dublin, specialising in turning messy, complex datasets into clean, compelling narratives that move businesses forward. My toolkit spans SQL (MySQL, PostgreSQL), Python, R, Power BI, Tableau, and Microsoft Azure — and I'm as comfortable in the command line as I am presenting insights to senior stakeholders.
-          </p>
-          <p class="about-paragraph">
-            My background combines academic rigour with real-world deployment: from investigating 50+ daily data protection incidents at SBI Life Insurance to building live KPI dashboards tracking pipeline performance at Heart Rhythm International. I hold a First-Class BEng in Electronics from Vidyalankar Institute of Technology, which grounds my data work in strong quantitative foundations.
-          </p>
-          <p class="about-paragraph">
-            What sets me apart is my ability to bridge the gap between raw data and business language — making insights that actually get acted on. I'm currently seeking data analyst and BI roles in Ireland where I can drive measurable impact through data.
-          </p>
-        </div>
-        <div class="about-cards reveal-up delay-2">
-          <div class="about-card mission-card">
-            <div class="card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+
+      <div class="skills-experience-grid">
+        <!-- Left Side: Technical Skills with Logos -->
+        <div class="skills-column reveal-up">
+          <h3 class="skills-column-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="margin-right:8px;">
+              <rect x="2" y="2" width="20" height="20" rx="2" ry="2" />
+              <rect x="9" y="9" width="6" height="6" />
+            </svg>
+            Technical Stack
+          </h3>
+
+          <div class="skills-grid">
+            <!-- SQL -->
+            <div class="skill-card">
+              <div class="skill-logo">
+                <i class="devicon-mysql-plain colored"></i>
+              </div>
+              <span class="skill-name">SQL</span>
             </div>
-            <h3>Mission</h3>
-            <p>To empower organisations to make faster, smarter decisions by building data products and insight pipelines that are accurate, accessible, and genuinely useful.</p>
-          </div>
-          <div class="about-card vision-card">
-            <div class="card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <!-- Python -->
+            <div class="skill-card">
+              <div class="skill-logo">
+                <i class="devicon-python-plain colored"></i>
+              </div>
+              <span class="skill-name">Python</span>
             </div>
-            <h3>Vision</h3>
-            <p>To become a data leader who shapes how businesses understand and act on their information — building a future where data literacy is universal and evidence drives every decision.</p>
+            <!-- R -->
+            <div class="skill-card">
+              <div class="skill-logo">
+                <i class="devicon-r-plain colored"></i>
+              </div>
+              <span class="skill-name">R Language</span>
+            </div>
+            <!-- Power BI -->
+            <div class="skill-card">
+              <div class="skill-logo">
+                <!-- PowerBI SVG -->
+                <svg viewBox="0 0 24 24">
+                  <path d="M9.5 2h5v20h-5zM2 9.5h5V22H2zm15-4.5h5V22h-5z" fill="#F2C811" />
+                </svg>
+              </div>
+              <span class="skill-name">Power BI</span>
+            </div>
+            <!-- Tableau -->
+            <div class="skill-card">
+              <div class="skill-logo">
+                <!-- Tableau logo SVG -->
+                <svg viewBox="0 0 24 24" fill="#E8762D">
+                  <path
+                    d="M11 12H9v-2h2V8h2v2h2v2h-2v2h-2v-2zm-6 3H3v-2h2v-2h2v2h2v2H7v2H5v-2zm12-6h-2V7h2V5h2v2h2v2h-2v2h-2V9zm-6 8H9v-2h2v-2h2v2h2v2h-2v2h-2v-2zm-6-8H3V7h2V5h2v2h2v2H7v2H5V9zm12 8h-2v-2h2v-2h2v2h2v2h-2v2h-2v-2z" />
+                </svg>
+              </div>
+              <span class="skill-name">Tableau</span>
+            </div>
+            <!-- Excel -->
+            <div class="skill-card">
+              <div class="skill-logo">
+                <i class="devicon-microsoftexcel-plain colored"></i>
+              </div>
+              <span class="skill-name">Excel</span>
+            </div>
+            <!-- Azure -->
+            <div class="skill-card">
+              <div class="skill-logo">
+                <i class="devicon-azure-plain colored"></i>
+              </div>
+              <span class="skill-name">Azure</span>
+            </div>
+            <!-- Git -->
+            <div class="skill-card">
+              <div class="skill-logo">
+                <i class="devicon-git-plain colored"></i>
+              </div>
+              <span class="skill-name">Git &amp; GitHub</span>
+            </div>
+            <!-- Pandas -->
+            <div class="skill-card">
+              <div class="skill-logo">
+                <i class="devicon-pandas-plain colored"></i>
+              </div>
+              <span class="skill-name">Pandas</span>
+            </div>
+            <!-- SAS -->
+            <div class="skill-card">
+              <div class="skill-logo">
+                <svg viewBox="0 0 24 24" fill="#007CC2">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z" />
+                </svg>
+              </div>
+              <span class="skill-name">SAS</span>
+            </div>
+            <!-- Jira -->
+            <div class="skill-card">
+              <div class="skill-logo">
+                <i class="devicon-jira-plain colored"></i>
+              </div>
+              <span class="skill-name">Jira</span>
+            </div>
+            <!-- Terraform -->
+            <div class="skill-card">
+              <div class="skill-logo">
+                <i class="devicon-terraform-plain colored"></i>
+              </div>
+              <span class="skill-name">Terraform</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="about-tech-strip reveal-up delay-3">
-        <span class="tech-label">Core Stack:</span>
-        <div class="tech-scroll">
-          <div class="tech-track">
-            <span class="tech-item">SQL</span>
-            <span class="tech-item">Python</span>
-            <span class="tech-item">R</span>
-            <span class="tech-item">Power BI</span>
-            <span class="tech-item">Tableau</span>
-            <span class="tech-item">Excel</span>
-            <span class="tech-item">Azure</span>
-            <span class="tech-item">Git</span>
-            <span class="tech-item">Scikit-learn</span>
-            <span class="tech-item">Pandas</span>
-            <!-- duplicate for seamless loop -->
-            <span class="tech-item">SQL</span>
-            <span class="tech-item">Python</span>
-            <span class="tech-item">R</span>
-            <span class="tech-item">Power BI</span>
-            <span class="tech-item">Tableau</span>
-            <span class="tech-item">Excel</span>
-            <span class="tech-item">Azure</span>
-            <span class="tech-item">Git</span>
-            <span class="tech-item">Scikit-learn</span>
-            <span class="tech-item">Pandas</span>
+
+        <!-- Right Side: Experience Timeline with Company Initials / Logos -->
+        <div class="experience-column reveal-up delay-2">
+          <h3 class="experience-column-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="margin-right:8px;">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+            </svg>
+            Work History
+          </h3>
+
+          <div class="exp-timeline">
+            <!-- Job 1 -->
+            <div class="exp-item">
+              <div class="exp-dot"></div>
+              <div class="exp-card">
+                <div class="exp-header">
+                  <div class="company-logo" title="Teleperformance"><img src="tele.png" alt="Teleperformance"></div>
+                  <div class="exp-header-text">
+                    <h4 class="exp-role">Operations Customer Expert</h4>
+                    <div class="exp-company">Teleperformance</div>
+                  </div>
+                </div>
+                <div class="exp-meta">
+                  <span class="exp-duration">May 2026 – Present</span>
+                  <span class="exp-location">Dublin, Ireland</span>
+                </div>
+                <ul class="exp-duties">
+                  <li>Tracked and analysed 100+ weekly customer cases using structured records and CRM data to support
+                    operational reporting and SLA compliance.</li>
+                  <li>Built and maintained escalation logs, improving handover accuracy and reducing reporting gaps
+                    across workflows.</li>
+                  <li>Generated data summaries to support management reporting on case resolution trends.</li>
+                </ul>
+                <div class="exp-achievements">
+                  <h4>Key Achievement</h4>
+                  <div class="achievement-chips">
+                    <span class="chip">100% SLA tracking compliance across 100+ weekly cases</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="exp-item">
+              <div class="exp-dot"></div>
+              <div class="exp-card">
+                <div class="exp-header">
+                  <div class="company-logo" title="Heart Rhythm International"><img src="hri.jfif" alt="HRI"></div>
+                  <div class="exp-header-text">
+                    <h4 class="exp-role">Sales &amp; Business Operations Intern</h4>
+                    <div class="exp-company">Heart Rhythm International</div>
+                  </div>
+                </div>
+                <div class="exp-meta">
+                  <span class="exp-duration">Oct 2025 – Mar 2026</span>
+                  <span class="exp-location">Dublin, Ireland</span>
+                </div>
+                <ul class="exp-duties">
+                  <li>Queried sales datasets using SQL and Python, delivering weekly KPI reports on revenue trends for
+                    senior stakeholders.</li>
+                  <li>Designed and maintained Power BI and Google Sheets dashboards tracking 5+ business metrics.</li>
+                  <li>Fulfilled ad-hoc analytics requests from sales and operations teams.</li>
+                </ul>
+                <div class="exp-achievements">
+                  <h4>Key Achievement</h4>
+                  <div class="achievement-chips">
+                    <span class="chip">Designed 5+ live dashboards for leadership reporting</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="exp-item">
+              <div class="exp-dot"></div>
+              <div class="exp-card">
+                <div class="exp-header">
+                  <div class="company-logo" title="SBI Life Insurance"><img src="sbi.png" alt="SBI"></div>
+
+                  <div class="exp-header-text">
+                    <h4 class="exp-role">Associate – Data Protection</h4>
+                    <div class="exp-company">SBI Life Insurance Pvt. Ltd.</div>
+                  </div>
+                </div>
+                <div class="exp-meta">
+                  <span class="exp-duration">Jul 2023 – Jul 2024</span>
+                  <span class="exp-location">Mumbai, India</span>
+                </div>
+                <ul class="exp-duties">
+                  <li>Investigated 50+ daily DLP incidents by analysing logs and anomaly patterns to identify data
+                    exfiltration risks.</li>
+                  <li>Prepared audit-ready compliance trackers to support regulatory review requirements.</li>
+                  <li>Trained 18+ employees on data protection best practices.</li>
+                </ul>
+                <div class="exp-achievements">
+                  <h4>Key Achievement</h4>
+                  <div class="achievement-chips">
+                    <span class="chip">15% reduction in DLP incident review turnaround</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Job 4 -->
+            <div class="exp-item">
+              <div class="exp-dot"></div>
+              <div class="exp-card">
+                <div class="exp-header">
+                  <div class="company-logo" title="Autobot Dynamics"><img src="vit.webp" alt="VIT"></div>
+                  <div class="exp-header-text">
+                    <h4 class="exp-role">Data Analyst Intern</h4>
+                    <div class="exp-company">Autobot Dynamics</div>
+                  </div>
+                </div>
+                <div class="exp-meta">
+                  <span class="exp-duration">Jul 2021 – Oct 2021</span>
+                  <span class="exp-location">Mumbai, India</span>
+                </div>
+                <ul class="exp-duties">
+                  <li>Cleaned and parsed 10,000+ customer records using SQL and Excel to prepare data-ready sets for
+                    statistical analysis.</li>
+                  <li>Performed EDA to identify trends and performance anomalies across operational datasets.</li>
+                  <li>Drafted stakeholder summaries surfacing actionable insights.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════ PAGE 3 — WORK EXPERIENCE ═══════════════════ -->
-  <section id="experience" class="section section-experience">
-    <div class="container">
-      <div class="section-header reveal-up">
-        <span class="section-number">02</span>
-        <h2 class="section-title">Work <span class="text-accent">Experience</span></h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="timeline">
-
-        <!-- Role 1 -->
-        <div class="timeline-item reveal-up">
-          <div class="timeline-marker">
-            <div class="marker-dot"></div>
-            <div class="marker-line"></div>
-          </div>
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div class="timeline-title-block">
-                <h3 class="timeline-role">Operations Customer Expert</h3>
-                <span class="timeline-company">Teleperformance</span>
-              </div>
-              <div class="timeline-meta">
-                <span class="timeline-type">Full-Time</span>
-                <span class="timeline-duration">May 2026 – Present</span>
-                <span class="timeline-location">Dublin, Ireland</span>
-              </div>
-            </div>
-            <ul class="timeline-duties">
-              <li>Tracked and analysed 100+ weekly customer cases using structured records and CRM data to support operational reporting, issue resolution monitoring, and SLA compliance.</li>
-              <li>Built and maintained escalation logs and compliance documentation, improving handover accuracy and reducing reporting gaps across workflows.</li>
-              <li>Generated structured data summaries to support management reporting on case resolution trends and operational efficiency.</li>
-            </ul>
-            <div class="timeline-achievements">
-              <h4>Key Achievements</h4>
-              <div class="achievement-chips">
-                <span class="chip">100% SLA tracking compliance across 100+ weekly cases</span>
-                <span class="chip">Reduced handover reporting errors through improved escalation log structure</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Role 2 -->
-        <div class="timeline-item reveal-up">
-          <div class="timeline-marker">
-            <div class="marker-dot"></div>
-            <div class="marker-line"></div>
-          </div>
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div class="timeline-title-block">
-                <h3 class="timeline-role">Sales &amp; Business Operations Intern</h3>
-                <span class="timeline-company">Heart Rhythm International</span>
-              </div>
-              <div class="timeline-meta">
-                <span class="timeline-type">Internship</span>
-                <span class="timeline-duration">Oct 2025 – Mar 2026</span>
-                <span class="timeline-location">Dublin, Ireland</span>
-              </div>
-            </div>
-            <ul class="timeline-duties">
-              <li>Queried and analysed healthcare and sales datasets using SQL and Python, delivering weekly KPI reports on pipeline performance, customer activity, and revenue trends for senior stakeholders.</li>
-              <li>Designed and maintained Power BI and Google Sheets dashboards tracking 5+ business metrics; supported CRM reporting and ad hoc analysis requests from cross-functional teams.</li>
-              <li>Fulfilled ad hoc analysis requests from cross-functional teams including sales and operations.</li>
-            </ul>
-            <div class="timeline-achievements">
-              <h4>Key Achievements</h4>
-              <div class="achievement-chips">
-                <span class="chip">5+ live BI dashboards for senior leadership</span>
-                <span class="chip">Reduced reporting turnaround via automated SQL templates</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Role 3 -->
-        <div class="timeline-item reveal-up">
-          <div class="timeline-marker">
-            <div class="marker-dot"></div>
-            <div class="marker-line"></div>
-          </div>
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div class="timeline-title-block">
-                <h3 class="timeline-role">Associate – Data Protection</h3>
-                <span class="timeline-company">SBI Life Insurance Pvt. Ltd.</span>
-              </div>
-              <div class="timeline-meta">
-                <span class="timeline-type">Full-Time</span>
-                <span class="timeline-duration">Jul 2023 – Jul 2024</span>
-                <span class="timeline-location">Mumbai, India</span>
-              </div>
-            </div>
-            <ul class="timeline-duties">
-              <li>Investigated 50+ daily DLP incidents by analysing logs and anomaly patterns to identify data exfiltration risks and policy violations.</li>
-              <li>Prepared audit-ready reports and compliance trackers to support regulatory review and internal governance requirements.</li>
-              <li>Trained 18+ employees on data protection practices, improving team-wide policy adherence.</li>
-            </ul>
-            <div class="timeline-achievements">
-              <h4>Key Achievements</h4>
-              <div class="achievement-chips">
-                <span class="chip">15% reduction in DLP incident review turnaround</span>
-                <span class="chip">Upskilled 18+ staff on data governance</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Role 4 -->
-        <div class="timeline-item reveal-up">
-          <div class="timeline-marker">
-            <div class="marker-dot"></div>
-          </div>
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div class="timeline-title-block">
-                <h3 class="timeline-role">Data Analyst Intern</h3>
-                <span class="timeline-company">Autobot Dynamics</span>
-              </div>
-              <div class="timeline-meta">
-                <span class="timeline-type">Internship</span>
-                <span class="timeline-duration">Jul 2021 – Oct 2021</span>
-                <span class="timeline-location">Mumbai, India</span>
-              </div>
-            </div>
-            <ul class="timeline-duties">
-              <li>Extracted and cleaned 10,000+ records using SQL and Excel to prepare data for exploratory and statistical analysis.</li>
-              <li>Performed EDA to identify trends, anomalies, and performance patterns across operational datasets.</li>
-              <li>Built stakeholder reports surfacing actionable insights and performance anomalies to inform business decisions.</li>
-            </ul>
-            <div class="timeline-achievements">
-              <h4>Key Achievements</h4>
-              <div class="achievement-chips">
-                <span class="chip">Cleaned 10,000+ records for analysis-ready datasets</span>
-                <span class="chip">Identified previously undetected performance anomalies</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════ PAGE 4 — EDUCATION ═══════════════════ -->
+  <!-- ═══════════════════ SECTION 3 — EDUCATION ═══════════════════ -->
   <section id="education" class="section section-education">
     <div class="container">
       <div class="section-header reveal-up">
-        <span class="section-number">03</span>
         <h2 class="section-title">Education</h2>
         <div class="section-line"></div>
       </div>
+
       <div class="education-grid">
         <!-- Degree 1 -->
-        <div class="edu-card reveal-up delay-1">
-          <div class="edu-card-accent"></div>
-          <div class="edu-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
+        <div class="edu-card reveal-up">
+          <div class="edu-header">
+            <div class="edu-logo" title="University College Dublin">
+              <img src="ucd.jfif" alt="University College Dublin logo">
+            </div>
+            <div class="edu-header-text">
+              <h3 class="edu-degree">MSc in Data &amp; Computational Science</h3>
+              <div class="edu-school">University College Dublin</div>
+            </div>
           </div>
-          <div class="edu-degree">MSc in Data &amp; Computational Science</div>
-          <div class="edu-school">University College Dublin</div>
-          <div class="edu-details">
-            <span>2024 – 2025</span>
-            <span>Dublin, Ireland</span>
-            <span>Full-Time</span>
+          <div class="edu-meta">
+            <span class="edu-duration">2024 – 2025</span>
+            <span class="edu-location">Dublin, Ireland</span>
           </div>
           <div class="edu-grade">
-            <span class="grade-badge">2:1 — Upper Second Class Honours</span>
+            <span class="grade-badge">Grade: 2:1 Honours</span>
           </div>
-          <ul class="edu-highlights">
-            <li>Specialised in statistical computing, machine learning, and large-scale data analysis with Python and R.</li>
-            <li>Core modules covered database systems, data visualisation, statistical inference, and computational methods.</li>
-            <li>Applied analytical skills to real-world datasets through capstone projects in predictive modelling and data storytelling.</li>
-          </ul>
         </div>
+
         <!-- Degree 2 -->
         <div class="edu-card reveal-up delay-2">
-          <div class="edu-card-accent"></div>
-          <div class="edu-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
+          <div class="edu-header">
+            <div class="edu-logo" title="Vidyalankar Institute of Technology"><img src="vit.webp"
+                alt="Vidyalankar Institute of Technology"></div>
+            <div class="edu-header-text">
+              <h3 class="edu-degree">Bachelor of Engineering in Electronics</h3>
+              <div class="edu-school">Vidyalankar Institute of Technology</div>
+            </div>
           </div>
-          <div class="edu-degree">Bachelor of Engineering in Electronics</div>
-          <div class="edu-school">Vidyalankar Institute of Technology</div>
-          <div class="edu-details">
-            <span>2019 – 2023</span>
-            <span>Mumbai, India</span>
-            <span>Full-Time</span>
+          <div class="edu-meta">
+            <span class="edu-duration">2019 – 2023</span>
+            <span class="edu-location">Mumbai, India</span>
           </div>
           <div class="edu-grade">
-            <span class="grade-badge">1:1 — First Class Honours</span>
+            <span class="grade-badge">Grade: 1:1 First Class Honours</span>
           </div>
-          <ul class="edu-highlights">
-            <li>Graduated with First-Class Honours, building strong foundations in quantitative methods, signal processing, and systems thinking.</li>
-            <li>Core coursework included mathematics, algorithms, digital systems, and programming — directly applicable to data-driven roles.</li>
-            <li>Engineering discipline developed rigorous problem-solving and analytical precision applied throughout subsequent data work.</li>
-          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════ PAGE 5 — PROJECTS ═══════════════════ -->
+  <!-- ═══════════════════ SECTION 4 — PROJECTS ═══════════════════ -->
   <section id="projects" class="section section-projects">
     <div class="container">
       <div class="section-header reveal-up">
-        <span class="section-number">04</span>
-        <h2 class="section-title">Featured <span class="text-accent">Projects</span></h2>
+        <h2 class="section-title">Featured Projects</h2>
         <div class="section-line"></div>
       </div>
-      <div class="projects-grid">
 
+      <div class="projects-grid">
         <!-- Project 1 -->
-        <div class="project-card reveal-up delay-1">
-          <div class="project-card-inner">
-            <div class="project-type">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-              Business Intelligence
+        <div class="project-card reveal-up">
+          <div class="project-card-header">
+            <div class="project-thumbnail">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="50" cy="50" r="45" stroke="var(--clr-primary)" stroke-dasharray="2 2" fill="none" />
+                <path d="M35 65 V45 M50 65 V30 M65 65 V50" stroke="var(--clr-primary)" stroke-width="6"
+                  stroke-linecap="round" />
+                <line x1="30" y1="70" x2="70" y2="70" stroke="var(--clr-primary)" stroke-width="3" />
+              </svg>
             </div>
-            <h3 class="project-title">E-Commerce Sales Dashboard</h3>
-            <p class="project-desc">An interactive Power BI business intelligence dashboard providing end-to-end visibility into e-commerce performance. Tracks revenue, profit, and order value across customer segments, surfacing top revenue drivers and underperforming product categories.</p>
-            <div class="project-tech">
-              <span>Power BI</span>
-              <span>DAX</span>
-              <span>KPI Reporting</span>
-              <span>Data Storytelling</span>
-              <span>Data Modelling</span>
+            <div class="project-card-title-area">
+              <h3 class="project-title">E-Commerce Sales</h3>
+              <div class="project-tech-stack-label">Tech Stack</div>
+              <div class="project-tech-icons">
+                <span class="tech-icon-txt">PBI</span>
+                <span class="tech-icon-txt">DAX</span>
+                <span class="tech-icon-txt">SQL</span>
+              </div>
             </div>
-            <ul class="project-outcomes">
-              <li>Delivered a fully interactive dashboard enabling self-serve analysis</li>
-              <li>Surfaced underperforming categories for targeted commercial decisions</li>
-              <li>Applied advanced KPI reporting frameworks in real time</li>
-              <li>End-to-end BI skills from data modelling to visualisation</li>
-            </ul>
-            <a href="https://github.com/anushasarla" class="project-link" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              View on GitHub
+          </div>
+          <p class="project-desc">
+            Interactive Power BI business intelligence dashboard providing end-to-end performance tracking. Visualises
+            revenue, profits, and segment distributions to reveal key growth opportunities.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/anushasarla" target="_blank" rel="noopener" class="project-link-icon"
+              title="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
             </a>
           </div>
         </div>
 
         <!-- Project 2 -->
-        <div class="project-card reveal-up delay-2">
-          <div class="project-card-inner">
-            <div class="project-type">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              Machine Learning
+        <div class="project-card reveal-up delay-1">
+          <div class="project-card-header">
+            <div class="project-thumbnail">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="50" cy="50" r="45" stroke="var(--clr-primary)" stroke-dasharray="2 2" fill="none" />
+                <path d="M50 30 C58 30 65 25 65 25 V45 C65 58 50 68 50 68 C50 68 35 58 35 45 V25 C35 25 42 30 50 30 Z"
+                  stroke="var(--clr-primary)" stroke-width="3" fill="none" />
+                <path d="M45 48 L49 52 L56 44" stroke="var(--clr-primary)" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
             </div>
-            <h3 class="project-title">Credit Card Fraud Detection</h3>
-            <p class="project-desc">A machine learning pipeline for financial fraud detection on a dataset of 280,000+ transactions. Conducted in-depth EDA and feature engineering to expose fraud patterns, trained classification models achieving 93% accuracy.</p>
-            <div class="project-tech">
-              <span>Python</span>
-              <span>Scikit-learn</span>
-              <span>Pandas</span>
-              <span>EDA</span>
-              <span>Classification</span>
+            <div class="project-card-title-area">
+              <h3 class="project-title">Credit Card Fraud</h3>
+              <div class="project-tech-stack-label">Tech Stack</div>
+              <div class="project-tech-icons">
+                <i class="devicon-python-plain" title="Python"></i>
+                <span class="tech-icon-txt">Sklearn</span>
+                <i class="devicon-pandas-plain" title="Pandas"></i>
+              </div>
             </div>
-            <ul class="project-outcomes">
-              <li>93% classification accuracy across 280,000+ transactions</li>
-              <li>Identified key fraud-predictive features through rigorous EDA</li>
-              <li>Applied precision, recall, F1-score for robust validation</li>
-              <li>Reproducible ML pipeline end-to-end</li>
-            </ul>
-            <a href="https://github.com/anushasarla" class="project-link" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              View on GitHub
+          </div>
+          <p class="project-desc">
+            A machine learning classification pipeline for financial fraud detection across 280,000+ transactions.
+            Accomplished 93% accuracy on highly imbalanced dataset using feature engineering.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/anushasarla" target="_blank" rel="noopener" class="project-link-icon"
+              title="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
             </a>
           </div>
         </div>
 
         <!-- Project 3 -->
-        <div class="project-card reveal-up delay-3">
-          <div class="project-card-inner">
-            <div class="project-type">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-              Statistical Modelling
+        <div class="project-card reveal-up delay-2">
+          <div class="project-card-header">
+            <div class="project-thumbnail">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="50" cy="50" r="45" stroke="var(--clr-primary)" stroke-dasharray="2 2" fill="none" />
+                <circle cx="50" cy="50" r="20" stroke="var(--clr-primary)" stroke-width="3" />
+                <path d="M50 5 L50 25 M50 75 L50 95 M5 50 L25 50 M75 50 L95 50" stroke="var(--clr-primary)"
+                  stroke-width="3" />
+              </svg>
             </div>
-            <h3 class="project-title">EPL Monte Carlo Season Simulator</h3>
-            <p class="project-desc">A probabilistic statistical model that simulates the English Premier League season using Elo ratings and Poisson-distributed goal scoring across 380+ match fixtures. Forecasts final league rankings and performance scenarios.</p>
-            <div class="project-tech">
-              <span>Python</span>
-              <span>Monte Carlo</span>
-              <span>Elo Rating</span>
-              <span>Poisson Model</span>
-              <span>Statistical Modelling</span>
+            <div class="project-card-title-area">
+              <h3 class="project-title">EPL Season Simulator</h3>
+              <div class="project-tech-stack-label">Tech Stack</div>
+              <div class="project-tech-icons">
+                <i class="devicon-python-plain" title="Python"></i>
+                <span class="tech-icon-txt">Elo</span>
+                <span class="tech-icon-txt">Poisson</span>
+              </div>
             </div>
-            <ul class="project-outcomes">
-              <li>Simulated 380+ EPL fixtures using Elo ratings</li>
-              <li>Applied Poisson distribution for match outcome forecasting</li>
-              <li>Generated season-level rankings and probability distributions</li>
-              <li>Advanced statistical programming in Python</li>
-            </ul>
-            <a href="https://github.com/anushasarla" class="project-link" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              View on GitHub
+          </div>
+          <p class="project-desc">
+            Probabilistic model simulating English Premier League seasons using Elo ratings and Poisson-distributed
+            goals across 380+ fixtures to forecast final league distributions.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/anushasarla" target="_blank" rel="noopener" class="project-link-icon"
+              title="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
             </a>
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════ PAGE 6 — SKILLS ═══════════════════ -->
-  <section id="skills" class="section section-skills">
-    <div class="container">
-      <div class="section-header reveal-up">
-        <span class="section-number">05</span>
-        <h2 class="section-title">Technical <span class="text-accent">Skills</span></h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="skills-grid">
-
-        <!-- Category 1 -->
-        <div class="skill-category reveal-up delay-1">
-          <div class="skill-cat-header">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            <h3>Languages &amp; Querying</h3>
-          </div>
-          <div class="skill-bars">
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>SQL (MySQL, PostgreSQL)</span><span>90%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="90"></div></div>
+        <!-- Project 4 -->
+        <div class="project-card reveal-up">
+          <div class="project-card-header">
+            <div class="project-thumbnail">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="50" cy="50" r="45" stroke="var(--clr-primary)" stroke-dasharray="2 2" fill="none" />
+                <circle cx="35" cy="55" r="14" stroke="var(--clr-primary)" stroke-width="3" />
+                <circle cx="65" cy="55" r="14" stroke="var(--clr-primary)" stroke-width="3" />
+                <path d="M35 55 L45 42 L55 42 L65 55 M45 42 L50 55" stroke="var(--clr-primary)" stroke-width="3" />
+              </svg>
             </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>Python</span><span>85%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>R</span><span>75%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="75"></div></div>
+            <div class="project-card-title-area">
+              <h3 class="project-title">Divvy Bike Analysis</h3>
+              <div class="project-tech-stack-label">Tech Stack</div>
+              <div class="project-tech-icons">
+                <i class="devicon-r-plain" title="R Language"></i>
+                <span class="tech-icon-txt">Tidyverse</span>
+                <span class="tech-icon-txt">ggplot2</span>
+              </div>
             </div>
           </div>
-        </div>
-
-        <!-- Category 2 -->
-        <div class="skill-category reveal-up delay-2">
-          <div class="skill-cat-header">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-            <h3>BI &amp; Visualisation</h3>
-          </div>
-          <div class="skill-bars">
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>Power BI</span><span>88%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="88"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>Tableau</span><span>78%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="78"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>Excel (Pivot, VLOOKUP)</span><span>90%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="90"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>Google Sheets</span><span>85%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>SAS</span><span>70%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="70"></div></div>
-            </div>
+          <p class="project-desc">
+            Analyzes Divvy bike trip data from Q1 2019 and Q1 2020 using R. Combines, cleans, and explores datasets to
+            compare riding behavior, count, and duration trends between member and casual riders.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/anushasarla" target="_blank" rel="noopener" class="project-link-icon"
+              title="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+            </a>
           </div>
         </div>
 
-        <!-- Category 3 -->
-        <div class="skill-category reveal-up delay-1">
-          <div class="skill-cat-header">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><ellipse cx="12" cy="5" rx="9" ry="3"/></svg>
-            <h3>Analytics Methods</h3>
-          </div>
-          <div class="skill-bars">
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>EDA &amp; Statistical Analysis</span><span>88%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="88"></div></div>
+        <!-- Project 5 -->
+        <div class="project-card reveal-up delay-1">
+          <div class="project-card-header">
+            <div class="project-thumbnail">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="50" cy="50" r="45" stroke="var(--clr-primary)" stroke-dasharray="2 2" fill="none" />
+                <rect x="32" y="32" width="36" height="36" rx="4" stroke="var(--clr-primary)" stroke-width="3" />
+                <path d="M50 32 V68 M32 50 H68" stroke="var(--clr-primary)" stroke-width="1.5" />
+              </svg>
             </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>Data Storytelling</span><span>90%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="90"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>KPI Reporting &amp; Dashboards</span><span>88%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="88"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>A/B Testing</span><span>72%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="72"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>ETL &amp; Data Governance</span><span>75%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="75"></div></div>
+            <div class="project-card-title-area">
+              <h3 class="project-title">Ratings &amp; Students</h3>
+              <div class="project-tech-stack-label">Tech Stack</div>
+              <div class="project-tech-icons">
+                <i class="devicon-r-plain" title="R Language"></i>
+                <span class="tech-icon-txt">dplyr</span>
+                <span class="tech-icon-txt">ggplot2</span>
+              </div>
             </div>
           </div>
-        </div>
-
-        <!-- Category 4 -->
-        <div class="skill-category reveal-up delay-2">
-          <div class="skill-cat-header">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-            <h3>Tools &amp; Platforms</h3>
-          </div>
-          <div class="skill-bars">
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>Git &amp; GitHub</span><span>83%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="83"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>Microsoft Azure</span><span>70%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="70"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>Jira &amp; SharePoint</span><span>78%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="78"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>FastAPI</span><span>65%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="65"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>Terraform</span><span>60%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="60"></div></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Category 5 -->
-        <div class="skill-category reveal-up delay-1">
-          <div class="skill-cat-header">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <h3>Data Protection &amp; Compliance</h3>
-          </div>
-          <div class="skill-bars">
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>DLP Incident Analysis</span><span>85%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>Audit Reporting</span><span>82%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="82"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>CRM Reporting</span><span>85%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Category 6 -->
-        <div class="skill-category reveal-up delay-2">
-          <div class="skill-cat-header">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><path d="M11 18H8a2 2 0 0 1-2-2V9"/></svg>
-            <h3>Machine Learning</h3>
-          </div>
-          <div class="skill-bars">
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>Scikit-learn</span><span>78%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="78"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>Classification Models</span><span>75%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="75"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-info"><span>Statistical Modelling</span><span>80%</span></div>
-              <div class="skill-track"><div class="skill-fill" data-width="80"></div></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════ PAGE 7 — CERTIFICATIONS ═══════════════════ -->
-  <section id="certifications" class="section section-certifications">
-    <div class="container">
-      <div class="section-header reveal-up">
-        <span class="section-number">06</span>
-        <h2 class="section-title">Certifications</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="certs-grid">
-        <!-- Cert 1 -->
-        <div class="cert-card reveal-up delay-1">
-          <div class="cert-badge">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 15l-2 5 2-1.5L14 20l-2-5z"/><circle cx="12" cy="9" r="6"/><path d="M12 6v1"/><path d="M9.5 7.5l.7.7"/><path d="M8 10h1"/><path d="M9.5 12.5l.7-.7"/><path d="M14.5 7.5l-.7.7"/><path d="M16 10h-1"/><path d="M14.5 12.5l-.7-.7"/></svg>
-          </div>
-          <div class="cert-content">
-            <h3>Google Data Analytics Professional Certificate</h3>
-            <span class="cert-provider">Google · 2025</span>
-            <p class="cert-skills">Data analysis, SQL, R, Tableau, data storytelling</p>
-          </div>
-          <div class="cert-image-link">
-            <a href="data_analytics_cert.pdf" target="_blank" class="btn btn-sm">View Certificate</a>
-          </div>
-        </div>
-        <!-- Cert 2 -->
-        <div class="cert-card reveal-up delay-2">
-          <div class="cert-badge">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 15l-2 5 2-1.5L14 20l-2-5z"/><circle cx="12" cy="9" r="6"/><path d="M12 6v1"/><path d="M9.5 7.5l.7.7"/><path d="M8 10h1"/><path d="M9.5 12.5l.7-.7"/><path d="M14.5 7.5l-.7.7"/><path d="M16 10h-1"/><path d="M14.5 12.5l-.7-.7"/></svg>
-          </div>
-          <div class="cert-content">
-            <h3>Python 101 for Data Science</h3>
-            <span class="cert-provider">IBM · 2024</span>
-            <p class="cert-skills">Python, pandas, data manipulation</p>
-          </div>
-          <div class="cert-image-link">
-            <a href="ibm_python_cert.pdf" target="_blank" class="btn btn-sm">View Certificate</a>
+          <p class="project-desc">
+            Uncovers viewer trends in Netflix/IMDb engagement ratings and key factors (parental education, study time)
+            influencing student math performance in R using multi-genre splitting and correlation grouping.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/anushasarla" target="_blank" rel="noopener" class="project-link-icon"
+              title="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════ PAGE 8 — ACHIEVEMENTS ═══════════════════ -->
-  <section id="achievements" class="section section-achievements">
+  <!-- ═══════════════════ SECTION 5 — ACHIEVEMENTS & EXTRACURRICULARS ═══════════════════ -->
+  <section id="achievements" class="section section-achievements-extracurricular">
     <div class="container">
       <div class="section-header reveal-up">
-        <span class="section-number">07</span>
-        <h2 class="section-title">Achievements</h2>
+        <h2 class="section-title">Achievements &amp; Extracurriculars</h2>
         <div class="section-line"></div>
-      </div>
-      <p class="achievements-subheading reveal-up">
-        A track record built on academic excellence, technical execution, and a commitment to continuous growth across two continents.
-      </p>
-
-      <div class="achievements-counter reveal-up delay-1">
-        <div class="counter-item">
-          <span class="counter-num" data-count="2">0</span><span class="counter-suffix">+</span>
-          <span class="counter-label">Years Experience</span>
-        </div>
-        <div class="counter-item">
-          <span class="counter-num" data-count="2">0</span>
-          <span class="counter-label">Certifications</span>
-        </div>
-        <div class="counter-item">
-          <span class="counter-num" data-count="3">0</span>
-          <span class="counter-label">Projects</span>
-        </div>
-        <div class="counter-item">
-          <span class="counter-num" data-count="4">0</span>
-          <span class="counter-label">Awards</span>
-        </div>
       </div>
 
       <div class="achievements-grid">
-        <!-- Achievement 1 -->
-        <div class="ach-card reveal-up delay-1">
-          <div class="ach-year">2023</div>
-          <div class="ach-category academic">Academic</div>
-          <h3>First-Class Honours, Bachelor of Engineering</h3>
-          <span class="ach-institution">Vidyalankar Institute of Technology, Mumbai</span>
-          <p>Graduated with a 1:1 grade in Electronics Engineering, demonstrating exceptional academic performance and strong quantitative foundations that underpin all subsequent data work.</p>
+        <!-- Google Cert -->
+        <div class="ach-card reveal-up">
+          <div class="ach-logo">
+            <!-- Google colored G icon -->
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="ach-content">
+            <span class="ach-year">2025</span>
+            <h3 class="ach-title">Google Data Analytics Professional Certificate</h3>
+            <span class="ach-institution">Google / Coursera</span>
+            <p class="ach-desc">Rigorous professional certification program covering SQL querying, R programming, data
+              visualization with Tableau, and analytical presentation frameworks.</p>
+          </div>
         </div>
 
-        <!-- Achievement 2 -->
+        <!-- IBM Cert -->
         <div class="ach-card reveal-up delay-2">
-          <div class="ach-year">2024</div>
-          <div class="ach-category professional">Professional</div>
-          <h3>15% Reduction in DLP Incident Review Turnaround</h3>
-          <span class="ach-institution">SBI Life Insurance Pvt. Ltd., Mumbai</span>
-          <p>Achieved measurable operational improvement by redesigning the DLP incident workflow, reducing review time by 15% through optimised classification frameworks and structured tracking.</p>
+          <div class="ach-logo">
+            <!-- IBM stylized logo SVG -->
+            <img src="cognitiveclass_logo.jfif" alt="Python">
+          </div>
+          <div class="ach-content">
+            <span class="ach-year">2024</span>
+            <h3 class="ach-title">Python 101 for Data Science</h3>
+            <span class="ach-institution">IBM</span>
+            <p class="ach-desc">Comprehensive certification focused on data parsing, mathematical operations,
+              computational loops, and file analytics using Pandas and NumPy arrays.</p>
+          </div>
         </div>
 
-        <!-- Achievement 3 -->
-        <div class="ach-card reveal-up delay-3">
-          <div class="ach-year">2025</div>
-          <div class="ach-category professional">Professional</div>
-          <h3>Google Data Analytics Professional Certificate</h3>
-          <span class="ach-institution">Google / Coursera</span>
-          <p>Completed Google's rigorous 8-course professional certification covering SQL, R, Tableau, and data storytelling — one of the most recognised credentials in the data analytics field.</p>
+        <!-- VIT Achievement -->
+        <div class="ach-card reveal-up">
+          <div class="ach-logo"><img src="vit.webp" alt="VIT"></div>
+          <div class="ach-content">
+            <span class="ach-year">2023</span>
+            <h3 class="ach-title">First-Class Honours Graduate</h3>
+            <span class="ach-institution">Vidyalankar Institute of Technology, Mumbai</span>
+          </div>
         </div>
 
-        <!-- Achievement 4 -->
-        <div class="ach-card reveal-up delay-4">
-          <div class="ach-year">2025</div>
-          <div class="ach-category academic">Academic</div>
-          <h3>MSc in Data &amp; Computational Science – 2:1 Honours</h3>
-          <span class="ach-institution">University College Dublin, Ireland</span>
-          <p>Completed a postgraduate MSc at one of Ireland's leading research universities, specialising in computational data science and graduating with Upper Second Class Honours while relocating internationally.</p>
+        <!-- SBI Life Achievement -->
+        <div class="ach-card reveal-up delay-2">
+          <div class="ach-logo"><img src="sbi.png" alt="SBI"></div>
+          <div class="ach-content">
+            <span class="ach-year">2024</span>
+            <h3 class="ach-title">15% Reduction in DLP Incident Review Turnaround</h3>
+            <span class="ach-institution">SBI Life Insurance Pvt. Ltd., Mumbai</span>
+            <p class="ach-desc">Redesigned operational workflow trackers and anomalous logging criteria to scale
+              investigations, decreasing response time by 15%.</p>
+          </div>
+        </div>
+
+        <!-- UCD Achievement -->
+        <div class="ach-card reveal-up">
+          <div class="ach-logo"><img src="ucd.jfif" alt="UCD"></div>
+          <div class="ach-content">
+            <span class="ach-year">2025</span>
+            <h3 class="ach-title">MSc in Data &amp; Computational Science Honours</h3>
+            <span class="ach-institution">University College Dublin, Ireland</span>
+          </div>
+        </div>
+
+        <!-- ITSA Achievement -->
+        <div class="ach-card reveal-up delay-2">
+          <div class="ach-logo"><img src="vit.webp" alt="VIT"></div>
+          <div class="ach-content">
+            <span class="ach-year">2023</span>
+            <h3 class="ach-title">Technical Team Member</h3>
+            <span class="ach-institution">Information Technology Student Association</span>
+            <p class="ach-desc">ITSA (Information Technology Student Association) - Technical team member. Assisted with
+              coordinating technical events, managing systems, and supporting fellow students in workshop environments.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════ PAGE 9 — CONTACT ═══════════════════ -->
+  <!-- ═══════════════════ SECTION 6 — CONTACT ═══════════════════ -->
   <section id="contact" class="section section-contact">
     <div class="container">
       <div class="section-header reveal-up">
-        <span class="section-number">08</span>
-        <h2 class="section-title">Let's <span class="text-accent">Talk</span></h2>
+        <h2 class="section-title">Get In Touch</h2>
         <div class="section-line"></div>
       </div>
-      <p class="contact-tagline reveal-up">Turning Data Into Decisions · Dublin, Ireland</p>
 
-      <div class="contact-grid">
-        <div class="contact-info reveal-up delay-1">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div>
-              <span class="contact-label">Email</span>
-              <a href="mailto:anushasarla123@gmail.com" class="contact-value">anushasarla123@gmail.com</a>
-            </div>
+      <div class="contact-layout">
+        <!-- Left Column: Bio Details, Links, CTA -->
+        <div class="contact-left-details reveal-up">
+          <h3 class="contact-name">Anusha Sarla</h3>
+          <p class="contact-role">Data Analyst | MSc in Data &amp; Computational Science @ UCD</p>
+
+          <div class="contact-social-row">
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/anusha-sarla" target="_blank" rel="noopener" class="contact-social-link"
+              aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/anushasarla" target="_blank" rel="noopener" class="contact-social-link"
+              aria-label="GitHub">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+            </a>
+            <!-- Mail -->
+            <a href="mailto:anushasarla123@gmail.com" class="contact-social-link" aria-label="Email">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z" />
+              </svg>
+            </a>
           </div>
-          <div class="contact-item">
-            <div class="contact-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div>
-              <span class="contact-label">Phone</span>
-              <a href="tel:+353894132432" class="contact-value">+353 89 413 2432</a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <span class="contact-label">Location</span>
-              <span class="contact-value">Dublin, Ireland</span>
-            </div>
+
+          <div class="contact-btn-row">
+            <!-- Certificate/Resume download link -->
+            <a href="AnushaResume.pdf" target="_blank" class="btn btn-primary">
+              <span>Resume</span>
+            </a>
+            <!-- <a href="mailto:anushasarla123@gmail.com" class="btn btn-outline">
+              <span>Say Hello</span>
+            </a> -->
           </div>
         </div>
 
-        <div class="contact-form-container reveal-up delay-2">
-          <form class="contact-form" id="contactForm">
-            <div class="form-group">
-              <input type="text" id="formName" placeholder="Your Name" required />
+        <!-- Right Column: Glowing Circular Profile Picture -->
+        <div class="contact-right-photo reveal-scale delay-2">
+          <div class="contact-photo-circle">
+            <div class="contact-photo-circle-inner">
+              <img src="photo.png" alt="Anusha Sarla" class="contact-profile-img" />
             </div>
-            <div class="form-group">
-              <input type="email" id="formEmail" placeholder="Your Email" required />
-            </div>
-            <div class="form-group">
-              <input type="text" id="formSubject" placeholder="Subject" />
-            </div>
-            <div class="form-group">
-              <textarea id="formMessage" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">
-              <span>Send Message</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            </button>
-          </form>
+          </div>
         </div>
       </div>
 
-      <div class="social-links reveal-up delay-3">
-        <a href="https://github.com/anushasarla" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </a>
-        <a href="https://linkedin.com/in/anusha-sarla" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="mailto:anushasarla123@gmail.com" class="social-link" aria-label="Email">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </a>
+      <!-- Bottom Footer centered info -->
+      <div class="footer-divider"></div>
+      <div class="footer-bottom-row">
+        <p>Made with ❤️ by <a href="#about">Anusha Sarla</a></p>
+        <!-- <p style="margin-top:0.5rem; opacity:0.55;">&copy; 2026 Anusha Sarla. All rights reserved.</p> -->
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════ FOOTER ═══════════════════ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <span class="footer-logo">AS</span>
-        <p>&copy; 2026 Anusha Sarla. All rights reserved.</p>
-        <p class="footer-tagline">Crafted with passion in Dublin, Ireland</p>
-      </div>
-    </div>
-  </footer>
+  <!-- Sticky Floating Connect Badge -->
+  <a href="#contact" class="sticky-connect-badge" id="stickyConnect" title="Let's Connect">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+  </a>
 
+  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
+
 </html>
